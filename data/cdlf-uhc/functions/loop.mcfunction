@@ -1,18 +1,26 @@
-execute as @e[tag=Timer] if score @s Minutos matches 2.. run function aaad:clean
+execute as @e[tag=Timer] if score @s SegundosTotales matches ..0 run function cdlf-uhc:clean
+
+execute as @e[tag=Timer] if score @s SegundosTotales matches 3420 run function cdlf-uhc:stage-2
+
+execute as @e[tag=Timer] if score @s SegundosTotales matches 3120 run function cdlf-uhc:stage-3
 
 # añadimos un segundo al contador
 execute as @e[tag=Timer] run scoreboard players add @s Segundos 1
-# quitamos un minuto del contador de minutos si tenemos 60 segundos
-execute as @e[tag=Timer,scores={Segundos=60..}] run scoreboard players remove @e[tag=ScoreDerecha] TiempoDerecha 1
+execute as @e[tag=Timer] run scoreboard players remove @s SegundosTotales 1
+execute as @e[tag=Timer] run scoreboard players remove @s SegundosVisibles 1
 # añadimos un minuto al contador de minutos
-execute as @e[tag=Timer,scores={Segundos=60..}] run scoreboard players add @s Minutos 1
+execute as @e[tag=Timer,scores={Segundos=60..}] run scoreboard players remove @s Minutos 1
+execute as @e[tag=Timer,scores={SegundosVisibles=..0}] run scoreboard players set @s SegundosVisibles 60
 # reseteamos los segundos a 0
 execute as @e[tag=Timer,scores={Segundos=60..}] run scoreboard players set @s Segundos 0
 
-execute as @e[tag=Timer] run bossbar set timer1 name [{"text":"Minutos: ","color":"white","italic":false},{"score":{"name":"@s","objective":"Minutos"},"color":"yellow","italic":true},{"text":"   Segundos: ","color":"white","italic":false},{"score":{"name":"@s","objective":"Segundos"},"color":"yellow","italic":true}]
+execute as @e[tag=Timer,scores={SegundosTotales=..3600}] run bossbar set timer1 name [{"text":"FASE 1 - ","color":"white","italic":false},{"score":{"name":"@s","objective":"Minutos"},"color":"yellow","italic":true},{"text":" : ","color":"white","italic":false},{"score":{"name":"@s","objective":"SegundosVisibles"},"color":"yellow","italic":true},{"text":" minutos","color":"red","italic":false}]
+execute as @e[tag=Timer,scores={SegundosTotales=..3420}] run bossbar set timer1 name [{"text":"FASE 2 - ","color":"white","italic":false},{"score":{"name":"@s","objective":"Minutos"},"color":"yellow","italic":true},{"text":" : ","color":"white","italic":false},{"score":{"name":"@s","objective":"SegundosVisibles"},"color":"yellow","italic":true},{"text":" minutos","color":"red","italic":false}]
+execute as @e[tag=Timer,scores={SegundosTotales=..3120}] run bossbar set timer1 name [{"text":"FASE 3 - ","color":"white","italic":false},{"score":{"name":"@s","objective":"Minutos"},"color":"yellow","italic":true},{"text":" : ","color":"white","italic":false},{"score":{"name":"@s","objective":"SegundosVisibles"},"color":"yellow","italic":true},{"text":" minutos","color":"red","italic":false}]
+execute as @e[tag=Timer,scores={SegundosTotales=..2760}] run bossbar set timer1 name [{"text":"FASE 4 - ","color":"white","italic":false},{"score":{"name":"@s","objective":"Minutos"},"color":"yellow","italic":true},{"text":" : ","color":"white","italic":false},{"score":{"name":"@s","objective":"SegundosVisibles"},"color":"yellow","italic":true},{"text":" minutos","color":"red","italic":false}]
 
-execute as @e[tag=Timer] store result bossbar timer1 value run scoreboard players get @s Segundos
+execute as @e[tag=Timer] store result bossbar timer1 value run scoreboard players get @s Minutos
 
 execute as @e[tag=Timer] run tellraw @a [{"text":"Minutos: ","color":"white","italic":false},{"score":{"name":"@s","objective":"Minutos"},"color":"yellow","italic":true},{"text":"   Segundos: ","color":"white","italic":false},{"score":{"name":"@s","objective":"Segundos"},"color":"yellow","italic":true}]
 
-schedule function aaad:loop 1s replace
+schedule function cdlf-uhc:loop 1s replace
