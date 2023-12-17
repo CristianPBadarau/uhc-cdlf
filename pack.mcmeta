@@ -1,0 +1,14 @@
+{
+  "pack": {
+    "pack_format": 26,
+    "description": [
+      "",
+      { "text": "UHC DataPack", "color": "red" },
+      { "text": " v0.1" },
+      { "text": "\n" },
+      { "text": "by ", "color": "gray" },
+      { "text": "c", "color": "green" },
+      { "text": "r", "color": "green" }
+    ]
+  }
+}
