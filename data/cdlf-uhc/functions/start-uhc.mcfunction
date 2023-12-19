@@ -4,11 +4,13 @@ scoreboard objectives add SegundosTotales dummy
 scoreboard objectives add Minutos dummy
 
 bossbar add timer1 [{"selector":"@s"}]
-bossbar set timer1 color pink
+bossbar set timer1 color purple
 bossbar set timer1 max 180
 bossbar set timer1 players @a
 
 execute as @a run summon minecraft:armor_stand ^ ^ ^2 {Tags: [Timer], Marker: 1b}
+
+scoreboard players add @e[tag=Players] Muertes 0
 
 execute as @e[tag=Timer] run scoreboard players set @s SegundosBossbar 60
 # Minutos de la primera fase
@@ -27,3 +29,6 @@ execute run function cdlf-uhc:wb
 
 execute as @a run function cdlf-uhc:loop
 
+# Contador de muertes
+
+scoreboard objectives add Muertes deathCount
