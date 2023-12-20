@@ -5,6 +5,8 @@ execute as @e[tag=Timer] if score @s SegundosTotales matches 3541 run function c
 
 execute as @e[tag=Timer] if score @s SegundosTotales matches 3481 run function cdlf-uhc:stages/stage-3
 
+execute as @e[tag=Timer] if score @s SegundosTotales matches 3421 run function cdlf-uhc:stages/stage-4
+
 # quitamos un segundo al contador
 execute as @e[tag=Timer] run scoreboard players remove @s Segundos 1
 execute as @e[tag=Timer] run scoreboard players remove @s SegundosTotales 1

@@ -17,7 +17,7 @@ effect give @a saturation 5 5 true
 
 # Inmortalidad primeros segundos
 
-effect give @a resistance 20 20 true
+effect give @a resistance 30 30 true
 
 # Setup inicial (gamerules, reiniciar mundo)
 
