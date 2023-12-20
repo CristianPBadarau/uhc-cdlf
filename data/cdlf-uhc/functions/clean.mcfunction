@@ -11,4 +11,12 @@ scoreboard players set @a SegundosTotales 0
 scoreboard objectives remove Muertes 
 scoreboard objectives remove Vida
 
+team remove Global
+team remove Madrid
+team remove Zaragoza
+team remove Z1
+team remove Z2
+team remove M1
+team remove M2
+
 bossbar remove timer1

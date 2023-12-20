@@ -1,3 +1,6 @@
+#Reset/clean
+execute run function cdlf-uhc:clean
+
 scoreboard objectives add SegundosBossbar dummy
 scoreboard objectives add Segundos dummy
 scoreboard objectives add SegundosTotales dummy
@@ -16,10 +19,11 @@ effect give @a saturation 5 5 true
 
 effect give @a resistance 20 20 true
 
-# Gamerules (Quitar regenreación de vida y comandos en el chat)
+# Setup inicial (gamerules, reiniciar mundo)
 
 gamerule naturalRegeneration false
-#gamerule sendCommandFeedback false
+difficulty hard
+time set 0
 
 # Bossbar
 
@@ -46,6 +50,8 @@ execute as @e[tag=Timer] store result bossbar timer1 max run scoreboard players 
 execute as @e[tag=Timer] run scoreboard players set @s SegundosTotales 3600
 
 execute run function cdlf-uhc:wb
+
+execute run function cdlf-uhc:teams/create_teams
 
 execute as @a run function cdlf-uhc:loop
 
