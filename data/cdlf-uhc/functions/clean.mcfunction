@@ -9,5 +9,6 @@ scoreboard players set @a SegundosBossbar 0
 scoreboard players set @a SegundosTotales 0
 
 scoreboard objectives remove Muertes 
+scoreboard objectives remove Vida
 
 bossbar remove timer1

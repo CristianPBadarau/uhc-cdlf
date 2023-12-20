@@ -3,6 +3,26 @@ scoreboard objectives add Segundos dummy
 scoreboard objectives add SegundosTotales dummy
 scoreboard objectives add Minutos dummy
 
+# Vida en tab
+scoreboard objectives add Vida health
+scoreboard objectives setdisplay list Vida
+
+# Resetear vida y hambre de los jugadores para que sea visible en tab
+effect give @a instant_damage 1 1 true
+effect give @a instant_health 2 2 true
+effect give @a saturation 5 5 true
+
+# Inmortalidad primeros segundos
+
+effect give @a resistance 20 20 true
+
+# Gamerules (Quitar regenreación de vida y comandos en el chat)
+
+gamerule naturalRegeneration false
+#gamerule sendCommandFeedback false
+
+# Bossbar
+
 bossbar add timer1 [{"selector":"@s"}]
 bossbar set timer1 color purple
 bossbar set timer1 max 180
