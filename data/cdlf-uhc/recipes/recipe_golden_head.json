@@ -1,0 +1,13 @@
+{
+    "type":"crafting_shaped",
+    "pattern":[
+        "GGG",
+        "GHG",
+        "GGG"
+    ],
+    "key":{
+        "G":{"item":"minecraft:gold_ingot"},
+        "H":{"item":"minecraft:player_head"}
+    },
+    "result":{"item":"minecraft:knowledge_book", "count":1}
+}

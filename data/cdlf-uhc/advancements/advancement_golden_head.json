@@ -1,0 +1,13 @@
+{
+    "criteria": {
+      "requirement": {
+        "trigger": "minecraft:recipe_unlocked",
+        "conditions": {
+          "recipe": "cdlf-uhc:recipe_golden_head"
+        }
+      }
+    },
+    "rewards": {
+      "function": "cdlf-uhc:craft_golden_head"
+    }
+  }
