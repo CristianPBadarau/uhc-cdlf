@@ -15,15 +15,20 @@ effect give @a instant_damage 1 1 true
 effect give @a instant_health 2 2 true
 effect give @a saturation 5 5 true
 
-# Inmortalidad primeros segundos
+# Efectos primeros segundos
 
-effect give @a resistance 30 30 true
+effect give @a resistance 50 30 true
+effect give @a blindness 12 1 true
+effect give @a slowness 12 20 true
+
 
 # Setup inicial (gamerules, reiniciar mundo)
 
 gamerule naturalRegeneration false
 difficulty hard
 time set 0
+title @a times 1s 1s 1s 
+weather clear
 
 # Bossbar
 
@@ -47,7 +52,7 @@ scoreboard players add @e[tag=Timer] SegundosBossbar 60
 execute as @e[tag=Timer] store result bossbar timer1 max run scoreboard players get @s SegundosBossbar
 
 # Duración total de la partida a segundos
-execute as @e[tag=Timer] run scoreboard players set @s SegundosTotales 3600
+execute as @e[tag=Timer] run scoreboard players set @s SegundosTotales 0
 
 execute run function cdlf-uhc:wb
 
@@ -58,3 +63,4 @@ execute as @a run function cdlf-uhc:loop
 # Contador de muertes
 
 scoreboard objectives add Muertes deathCount
+

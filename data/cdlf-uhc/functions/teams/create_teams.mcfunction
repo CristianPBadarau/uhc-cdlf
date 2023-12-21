@@ -1,7 +1,3 @@
-team add Global "Global"
-team join Global @a
-team modify Global friendlyFire false 
-
 team add Madrid "Madrid"
 team modify Madrid color light_purple
 team modify Madrid friendlyFire false 
