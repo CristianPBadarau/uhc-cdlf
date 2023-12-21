@@ -36,22 +36,22 @@ execute as @e[tag=Timer] store result bossbar timer1 value run scoreboard player
 ## Contador inicial
 
 execute as @e[tag=Timer] if score @s SegundosTotales matches 2 run title @a title "5"
-execute as @e[tag=Timer] if score @s SegundosTotales matches 2 run playsound entity.experience_orb.pickup ambient @a ~ ~ ~ 2 1 1
+execute as @e[tag=Timer] if score @s SegundosTotales matches 2 run playsound entity.experience_orb.pickup neutral @a ~ ~ ~ 2 1 1
 
 execute as @e[tag=Timer] if score @s SegundosTotales matches 4 run title @a title "4"
-execute as @e[tag=Timer] if score @s SegundosTotales matches 4 run playsound entity.experience_orb.pickup ambient @a ~ ~ ~ 2 1 1
+execute as @e[tag=Timer] if score @s SegundosTotales matches 4 run playsound entity.experience_orb.pickup neutral @a ~ ~ ~ 2 1 1
 
 execute as @e[tag=Timer] if score @s SegundosTotales matches 6 run title @a title "3"
-execute as @e[tag=Timer] if score @s SegundosTotales matches 6 run playsound entity.experience_orb.pickup ambient @a ~ ~ ~ 2 1 1
+execute as @e[tag=Timer] if score @s SegundosTotales matches 6 run playsound entity.experience_orb.pickup neutral @a ~ ~ ~ 2 1 1
 
 execute as @e[tag=Timer] if score @s SegundosTotales matches 8 run title @a title "2"
-execute as @e[tag=Timer] if score @s SegundosTotales matches 8 run playsound entity.experience_orb.pickup ambient @a ~ ~ ~ 2 1 1
+execute as @e[tag=Timer] if score @s SegundosTotales matches 8 run playsound entity.experience_orb.pickup neutral @a ~ ~ ~ 2 1 1
 
 execute as @e[tag=Timer] if score @s SegundosTotales matches 10 run title @a title "1"
-execute as @e[tag=Timer] if score @s SegundosTotales matches 10 run playsound entity.experience_orb.pickup ambient @a ~ ~ ~ 2 1 1
+execute as @e[tag=Timer] if score @s SegundosTotales matches 10 run playsound entity.experience_orb.pickup neutral @a ~ ~ ~ 2 1 1
 
 execute as @e[tag=Timer] if score @s SegundosTotales matches 12 run title @a title "GO!"
-execute as @e[tag=Timer] if score @s SegundosTotales matches 12 run playsound entity.player.levelup ambient @a ~ ~ ~ 2 1 1
+execute as @e[tag=Timer] if score @s SegundosTotales matches 12 run playsound entity.player.levelup neutral @a ~ ~ ~ 2 1 1
 
 # loop
 
@@ -59,5 +59,5 @@ schedule function cdlf-uhc:loop 1s replace
 
 # Sonido cuando muere un jugador y reset de contador de muertes
 
-execute as @a[scores={Muertes=1..}] run playsound minecraft:entity.lightning_bolt.thunder player @a ~ ~ ~ 3 1 
+execute as @a[scores={Muertes=1..}] run playsound minecraft:entity.lightning_bolt.thunder player @a ~ ~ ~ 3 1 1
 execute as @a[scores={Muertes=1..}] run scoreboard players reset @a[scores={Muertes=1..}] Muertes
