@@ -1,0 +1,19 @@
+{
+    "criteria": {
+      "requirement": {
+        "trigger": "minecraft:consume_item",
+        "conditions": {
+          "item": {
+            "items": [
+              "minecraft:golden_apple"
+            ],
+            "nbt": "{custom_food:\"golden_head\"}"
+          }
+        }
+      }
+    },
+    "rewards": {
+      "function": "cdlf-uhc:eat_golden_head"
+    }
+  }
+  

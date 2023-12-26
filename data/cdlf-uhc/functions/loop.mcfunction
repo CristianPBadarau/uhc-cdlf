@@ -61,3 +61,4 @@ schedule function cdlf-uhc:loop 1s replace
 
 execute as @a[scores={Muertes=1..}] run playsound minecraft:entity.lightning_bolt.thunder player @a ~ ~ ~ 3 1 1
 execute as @a[scores={Muertes=1..}] run scoreboard players reset @a[scores={Muertes=1..}] Muertes
+
